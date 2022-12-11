@@ -1,2 +1,2 @@
 run_short_url:
-	go build ./cmd/shorturl && ./shorturl
+	go build -o build/shorturl ./cmd/shorturl  && ./build/shorturl
