@@ -1,0 +1,6 @@
+base_url: http://127.0.0.1:8000/
+redis_config:
+  db_host: 127.0.0.1
+  db_port: 6379
+  db_passwd:
+  db: 0
