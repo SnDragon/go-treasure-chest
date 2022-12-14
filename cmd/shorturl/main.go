@@ -10,5 +10,5 @@ func main() {
 	if err := app.Initialize(); err != nil {
 		log.Fatalf("app init err: %+v\n", err)
 	}
-	app.Run(":8000")
+	app.Run(":80")
 }

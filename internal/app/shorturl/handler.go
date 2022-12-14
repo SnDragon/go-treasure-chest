@@ -3,6 +3,7 @@ package shorturl
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/SnDragon/go-treasure-chest/internal/app/shorturl/entity"
 	"github.com/SnDragon/go-treasure-chest/internal/app/shorturl/errors"
 	"github.com/SnDragon/go-treasure-chest/internal/app/shorturl/resource"
 	"github.com/gorilla/mux"
@@ -17,12 +18,16 @@ type CreateShortUrlReq struct {
 }
 
 type CreateShortUrlRsp struct {
+	Code     int    `json:"code"`
+	Msg      string `json:"msg"`
 	ShortUrl string `json:"short_url"`
 }
 
-//type GetUrlInfoReq struct {
-//	Url string `json:"url" validate:"required"`
-//}
+type GetUrlInfoRsp struct {
+	Code int                   `json:"code"`
+	Msg  string                `json:"msg"`
+	Info *entity.UrlDetailInfo `json:"info"`
+}
 
 func (app *App) createShortUrl(w http.ResponseWriter, r *http.Request) {
 	var req CreateShortUrlReq
@@ -51,6 +56,8 @@ func (app *App) createShortUrl(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	responseWithJson(w, http.StatusCreated, &CreateShortUrlRsp{
+		Code:     0,
+		Msg:      "ok",
 		ShortUrl: ret,
 	})
 }
@@ -65,7 +72,11 @@ func (app *App) getUrlInfo(w http.ResponseWriter, r *http.Request) {
 		})
 		return
 	} else {
-		responseWithJson(w, http.StatusOK, info)
+		responseWithJson(w, http.StatusOK, &GetUrlInfoRsp{
+			Code: 0,
+			Msg:  "ok",
+			Info: info,
+		})
 	}
 }
 
