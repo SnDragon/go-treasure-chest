@@ -1,10 +1,5 @@
----
-title: 使用Go语言开发短地址服务
-date: 2022-12-13 22:46:34
-tags:["Go", "短链"]
----
+<img src="https://longerwu-1252728875.cos.ap-guangzhou.myqcloud.com/blogs/shorturl_mind.png" width = "500" height = "500" alt="思维导图" />
 
-![思维导图](https://raw.githubusercontent.com/SnDragon/go-treasure-chest/main/docs/shorturl/img/shorturl_mind.png)
 ## 简介
 
 ### 什么是短地址(短链)服务?
@@ -33,7 +28,7 @@ tags:["Go", "短链"]
 ### 流程
 实现短链服务并不复杂,我们先看看使用短链的流程，如图所示:
 
-![流程图](https://raw.githubusercontent.com/SnDragon/go-treasure-chest/main/docs/shorturl/img/short_url_flow_chart.png)
+![流程图](https://longerwu-1252728875.cos.ap-guangzhou.myqcloud.com/blogs/short_url_flow_chart.png)
 1. 调用短链服务转换接口，输入长链
 2. 短链服务生成对应的短链,并存储映射关系
 3. 客户端(一般是浏览器)访问短链
@@ -208,7 +203,8 @@ curl -X POST \
 ### 重定向
 浏览器打开`http://myurl.cn/4C99`
 
-![重定向截图](https://raw.githubusercontent.com/SnDragon/go-treasure-chest/main/docs/shorturl/img/short_url_redirect.png)
+<img src="https://longerwu-1252728875.cos.ap-guangzhou.myqcloud.com/blogs/short_url_redirect.png" alt="重定向截图" width = "500" height = "500" />
+
 ### 查看详情
 ```
 curl -X GET \
