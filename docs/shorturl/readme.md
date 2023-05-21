@@ -194,7 +194,7 @@ curl -X POST \
   -d '{"url":"https://www.baidu.com?name=SnDragon","expire_seconds":100}'
 ```
 返回:
-```
+```json
 {
     "code": 0,
     "msg": "ok",
@@ -216,7 +216,7 @@ curl -X GET \
 ```
 
 返回:
-```
+```json
 {
     "code": 0,
     "msg": "ok",
